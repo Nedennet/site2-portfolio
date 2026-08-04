@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Hama</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 1. Petite bannière -->
+    <div class="top-bar" id="topBar">
+        <div class="contact-info">
+            📞 +33 1 23 45 67 89 &nbsp;|&nbsp; ✉️ contact@restaurant-hama.com
+        </div>
+        <div class="lang-options">
+            <a href="index.html">FR</a> | <a href="en.html">EN</a>
+        </div>
+    </div>
+
+    <!-- 2. Sous-bannière (Menu principal) -->
+    <nav class="main-nav" id="mainNav">
+        <div class="logo">Hama</div>
+        
+        <ul class="nav-links">
+            <li class="dropdown">
+                <a href="#">La Carte ▾</a>
+                <!-- Menu déroulant original -->
+                <ul class="dropdown-content">
+                    <li><a href="#entrees">Entrées</a></li>
+                    <li><a href="#plats">Plats Signatures</a></li>
+                    <li><a href="#desserts">Desserts</a></li>
+                    <li><a href="#boissons">Vins & Boissons</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <a href="#reservation" class="btn-reserve">Réserver une table</a>
+    </nav>
+
+    <section class="hero">
+        <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1920&q=80');"></div>
+        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=1920&q=80');"></div>
+        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1920&q=80');"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="hero-badge">Restaurant Hama</span>
+            <h1 id="heroTitle">Bienvenue chez Hama</h1>
+            <p id="heroText">Une parenthèse lumineuse où chaque plat raconte une histoire de saveurs et de partage.</p>
+            <div class="hero-buttons">
+                <a href="#le-menu" class="btn-menu">Découvrir le menu</a>
+                <a href="#reservation" class="btn-secondary">Réserver maintenant</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="story-section" id="story">
+        <div class="story-wrapper">
+            <p class="eyebrow">Saveurs fines et royales</p>
+            <div class="story-divider">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <h2>Nous offrons du haut de gamme</h2>
+            <p>Chaque plat est une œuvre, conçue pour éveiller vos sens et vous transporter dans une expérience gustative inoubliable. Laissez-vous guider par nos chefs qui, avec passion et savoir-faire, élaborent des plats élégants aux arômes subtils.</p>
+        </div>
+    </section>
+
+    <section class="featured-section" id="le-menu">
+        <div class="section-head">
+            <span>Nos suggestions</span>
+            <h2>Quelques plats qui nous inspirent</h2>
+        </div>
+        <div class="dish-grid">
+            <article class="dish-card">
+                <div class="dish-card__picture" style="background-image: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=900&q=80');"></div>
+                <div class="dish-card__content">
+                    <h3>Tartare de saumon</h3>
+                    <p>Fines tranches de saumon, huile citronnée et éclats de câpres.</p>
+                    <a href="#le-menu" class="dish-card__link">Voir la carte</a>
+                </div>
+            </article>
+            <article class="dish-card">
+                <div class="dish-card__picture" style="background-image: url('https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=900&q=80');"></div>
+                <div class="dish-card__content">
+                    <h3>Poulet rôti au miel</h3>
+                    <p>Épices douces, légumes caramélisés et sauce onctueuse.</p>
+                    <a href="#le-menu" class="dish-card__link">Voir la carte</a>
+                </div>
+            </article>
+            <article class="dish-card">
+                <div class="dish-card__picture" style="background-image: url('https://images.unsplash.com/photo-1525755662778-989d0524087e?auto=format&fit=crop&w=900&q=80');"></div>
+                <div class="dish-card__content">
+                    <h3>Risotto crémeux</h3>
+                    <p>Arômes de parmesan, champignons sauvages et persil frais.</p>
+                    <a href="#le-menu" class="dish-card__link">Voir la carte</a>
+                </div>
+            </article>
+            <article class="dish-card">
+                <div class="dish-card__picture" style="background-image: url('https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=900&q=80');"></div>
+                <div class="dish-card__content">
+                    <h3>Tartelette citron</h3>
+                    <p>Pâte sablée, crème acidulée et meringue légère dorée au chalumeau.</p>
+                    <a href="#le-menu" class="dish-card__link">Voir la carte</a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section class="reservation-section" id="reservation">
+        <div class="reservation-grid">
+            <div class="reservation-intro">
+                <span class="section-tag">Réservation</span>
+                <h2>Réservez votre table en un instant</h2>
+                <p>Simulez une réservation avec votre nom, prénom, email et message. Nous vous confirmerons très bientôt.</p>
+                <div class="contact-mini-card">
+                    <p><strong>Contact</strong></p>
+                    <p>📍 12 Rue du Goût, Paris</p>
+                    <p>📞 +33 1 23 45 67 89</p>
+                    <p>✉️ contact@restaurant-hama.com</p>
+                </div>
+            </div>
+            <form id="reservationForm" class="reservation-form">
+                <div class="input-group">
+                    <label for="firstName">Prénom</label>
+                    <input type="text" id="firstName" name="firstName" placeholder="Votre prénom" required>
+                </div>
+                <div class="input-group">
+                    <label for="lastName">Nom</label>
+                    <input type="text" id="lastName" name="lastName" placeholder="Votre nom" required>
+                </div>
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="votre@email.com" required>
+                </div>
+                <div class="input-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Vos souhaits pour la table"></textarea>
+                </div>
+                <button type="submit" class="btn-reserve">Envoyer ma demande</button>
+                <div id="reservationMessage" class="form-message" aria-live="polite"></div>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer-section">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h3>Hama</h3>
+                <p>Restaurant moderne en jaune et blanc, entre convivialité et création.</p>
+            </div>
+            <div class="footer-links">
+                <p><strong>Contact</strong></p>
+                <a href="tel:+33123456789">+33 1 23 45 67 89</a>
+                <a href="mailto:contact@restaurant-hama.com">contact@restaurant-hama.com</a>
+            </div>
+            <div class="footer-info">
+                <p><strong>Horaires</strong></p>
+                <p>Mar - Dim : 12h00 - 23h00</p>
+                <p>Fermé le lundi</p>
+            </div>
+        </div>
+        <div class="footer-credit">Créé par <a href="#">Neden Network</a></div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

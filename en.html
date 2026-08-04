@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hama Restaurant</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="top-bar" id="topBar">
+        <div class="contact-info">📞 +33 1 23 45 67 89 &nbsp;|&nbsp; ✉️ contact@restaurant-hama.com</div>
+        <div class="lang-options"><a href="index.html">FR</a> | <a href="en.html">EN</a></div>
+    </div>
+
+    <nav class="main-nav" id="mainNav">
+        <div class="logo">Hama</div>
+        <ul class="nav-links">
+            <li class="dropdown">
+                <a href="#le-menu">Menu ▾</a>
+                <ul class="dropdown-content">
+                    <li><a href="#le-menu">Starters</a></li>
+                    <li><a href="#le-menu">Signature Mains</a></li>
+                    <li><a href="#le-menu">Desserts</a></li>
+                    <li><a href="#le-menu">Wines & Drinks</a></li>
+                </ul>
+            </li>
+            <li><a href="#story">About</a></li>
+            <li><a href="#reservation">Reservations</a></li>
+        </ul>
+        <a href="#reservation" class="btn-reserve">Book a table</a>
+    </nav>
+
+    <section class="hero">
+        <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1920&q=80');"></div>
+        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=1920&q=80');"></div>
+        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1920&q=80');"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="hero-badge">Hama Restaurant</span>
+            <h1 id="heroTitle">Welcome to Hama</h1>
+            <p id="heroText">A bright culinary escape where every dish tells a story of taste and togetherness.</p>
+            <div class="hero-buttons">
+                <a href="#le-menu" class="btn-menu">Discover the Menu</a>
+                <a href="#reservation" class="btn-secondary">Book now</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="story-section" id="story">
+        <div class="story-wrapper">
+            <p class="eyebrow">Fine, royal flavors</p>
+            <div class="story-divider">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <h2>We serve elevated cuisine</h2>
+            <p>Each dish is a crafted masterpiece designed to awaken your senses and carry you through an unforgettable tasting journey. Our chefs blend passion and expertise to create elegant plates with subtle aromatic notes.</p>
+        </div>
+    </section>
+
+    <section class="featured-section" id="le-menu">
+        <div class="section-head">
+            <span>Chef's picks</span>
+            <h2>Some dishes we love</h2>
+        </div>
+        <div class="dish-grid">
+            <article class="dish-card">
+                <div class="dish-card__picture" style="background-image: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=900&q=80');"></div>
+                <div class="dish-card__content">
+                    <h3>Salmon Tartare</h3>
+                    <p>Delicate salmon slices, lemon oil, and caper crunch.</p>
+                    <a href="#le-menu" class="dish-card__link">View menu</a>
+                </div>
+            </article>
+            <article class="dish-card">
+                <div class="dish-card__picture" style="background-image: url('https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=900&q=80');"></div>
+                <div class="dish-card__content">
+                    <h3>Honey Roasted Chicken</h3>
+                    <p>Delicate spices, roasted vegetables, and silky glaze.</p>
+                    <a href="#le-menu" class="dish-card__link">View menu</a>
+                </div>
+            </article>
+            <article class="dish-card">
+                <div class="dish-card__picture" style="background-image: url('https://images.unsplash.com/photo-1525755662778-989d0524087e?auto=format&fit=crop&w=900&q=80');"></div>
+                <div class="dish-card__content">
+                    <h3>Creamy Risotto</h3>
+                    <p>Parmesan notes, wild mushrooms, and fresh parsley.</p>
+                    <a href="#le-menu" class="dish-card__link">View menu</a>
+                </div>
+            </article>
+            <article class="dish-card">
+                <div class="dish-card__picture" style="background-image: url('https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=900&q=80');"></div>
+                <div class="dish-card__content">
+                    <h3>Lemon Tartlet</h3>
+                    <p>Shortcrust pastry, zesty cream, and toasted meringue.</p>
+                    <a href="#le-menu" class="dish-card__link">View menu</a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section class="reservation-section" id="reservation">
+        <div class="reservation-grid">
+            <div class="reservation-intro">
+                <span class="section-tag">Reservations</span>
+                <h2>Book your table in seconds</h2>
+                <p>Simulate a booking with your first name, last name, email and a message. We'll get back to you shortly.</p>
+                <div class="contact-mini-card">
+                    <p><strong>Contact</strong></p>
+                    <p>📍 12 Rue du Goût, Paris</p>
+                    <p>📞 +33 1 23 45 67 89</p>
+                    <p>✉️ contact@restaurant-hama.com</p>
+                </div>
+            </div>
+            <form id="reservationForm" class="reservation-form">
+                <div class="input-group">
+                    <label for="firstName">First Name</label>
+                    <input type="text" id="firstName" name="firstName" placeholder="Your first name" required>
+                </div>
+                <div class="input-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" id="lastName" name="lastName" placeholder="Your last name" required>
+                </div>
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                </div>
+                <div class="input-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Your special requests"></textarea>
+                </div>
+                <button type="submit" class="btn-reserve">Send request</button>
+                <div id="reservationMessage" class="form-message" aria-live="polite"></div>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer-section">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h3>Hama</h3>
+                <p>Modern yellow and white dining, where taste meets elegance.</p>
+            </div>
+            <div class="footer-links">
+                <p><strong>Contact</strong></p>
+                <a href="tel:+33123456789">+33 1 23 45 67 89</a>
+                <a href="mailto:contact@restaurant-hama.com">contact@restaurant-hama.com</a>
+            </div>
+            <div class="footer-info">
+                <p><strong>Opening Hours</strong></p>
+                <p>Tue - Sun: 12:00 - 23:00</p>
+                <p>Closed Monday</p>
+            </div>
+        </div>
+        <div class="footer-credit">Created by <a href="#">Neden Network</a></div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
