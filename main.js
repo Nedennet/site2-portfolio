@@ -64,6 +64,23 @@ function nextSlide() {
     }, 50);
 }
 
+const navToggle = document.querySelector('.nav-toggle');
+const mainNav = document.getElementById('mainNav');
+
+if (navToggle && mainNav) {
+    navToggle.addEventListener('click', () => {
+        const isOpen = mainNav.classList.toggle('open');
+        navToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    document.addEventListener('click', (event) => {
+        if (!mainNav.contains(event.target)) {
+            mainNav.classList.remove('open');
+            navToggle.setAttribute('aria-expanded', 'false');
+        }
+    });
+}
+
 const dropdown = document.querySelector('.dropdown');
 const dropdownLink = dropdown?.querySelector('a');
 
