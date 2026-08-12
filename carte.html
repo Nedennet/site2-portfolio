@@ -126,11 +126,11 @@
 
       .hero {
         position: relative;
-        padding: 7rem 5% 4rem;
+        padding: 6rem 5% 3rem;
         background:
           linear-gradient(105deg, rgba(18, 15, 12, 0.82), rgba(18, 15, 12, 0.45)),
           url('photo/cocktail_hama.jpg') center/cover no-repeat;
-        min-height: 480px;
+        min-height: 360px;
       }
 
       .hero__inner {
@@ -190,7 +190,7 @@
       }
 
       .menu-section {
-        padding: 4.5rem 5% 5rem;
+        padding: 3rem 5% 4rem;
         background: linear-gradient(180deg, #f8f2ea 0%, #f1e7d7 100%);
       }
 
@@ -202,11 +202,11 @@
       .menu-category {
         scroll-margin-top: 110px;
         background: rgba(25, 20, 17, 0.96);
-        border: 1px solid rgba(255, 193, 7, 0.28);
+        border: 1px solid rgba(255, 193, 7, 0.2);
         border-radius: 0;
-        box-shadow: var(--ombre);
-        padding: 2rem 2rem 2.2rem;
-        margin-bottom: 2rem;
+        box-shadow: none;
+        padding: 1.5rem 1.5rem 1.8rem;
+        margin-bottom: 1.5rem;
         overflow: hidden;
       }
 
@@ -241,24 +241,24 @@
 
       .dish {
         display: grid;
-        grid-template-columns: 110px 1fr auto;
-        gap: 1rem;
+        grid-template-columns: 96px 1fr auto;
+        gap: 0.85rem;
         background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
-        border: 1px solid rgba(255, 193, 7, 0.2);
+        border: 1px solid rgba(255, 193, 7, 0.15);
         border-radius: 0;
-        padding: 0.8rem 0.9rem;
-        transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+        padding: 0.7rem 0.8rem;
+        transition: transform 0.2s ease, border-color 0.2s ease;
       }
 
       .dish:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 16px 32px rgba(0,0,0,0.16);
-        border-color: rgba(255, 193, 7, 0.45);
+        transform: translateY(-2px);
+        box-shadow: none;
+        border-color: rgba(255, 193, 7, 0.4);
       }
 
       .dish__image {
         width: 100%;
-        min-height: 100px;
+        min-height: 92px;
         border: 1px solid rgba(255,255,255,0.08);
         background-size: cover;
         background-position: center;
