@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>La Carte | Hama</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --jaune: #ffc107;
+        --jaune-clair: #fff8e1;
+        --blanc: #ffffff;
+        --beige: #faf5ef;
+        --texte: #222222;
+        --gris: #5e5e5e;
+        --ombre: 0 24px 80px rgba(0, 0, 0, 0.1);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: 'Inter', sans-serif;
+        background: #fffdfb;
+        color: var(--texte);
+        line-height: 1.7;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      h1, h2, h3, h4 {
+        font-family: 'Playfair Display', serif;
+      }
+
+      .top-bar {
+        background: var(--jaune);
+        color: var(--texte);
+        padding: 0.9rem 5%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.8rem;
+        font-weight: 700;
+      }
+
+      .top-bar__info,
+      .top-bar__lang {
+        display: flex;
+        align-items: center;
+        gap: 0.7rem;
+        flex-wrap: wrap;
+      }
+
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        background: rgba(255, 255, 255, 0.96);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+      }
+
+      .nav {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 1rem 5%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+      }
+
+      .brand {
+        font-size: 1.8rem;
+        font-weight: 900;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--jaune);
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        list-style: none;
+      }
+
+      .nav-links a {
+        font-weight: 600;
+        color: var(--texte);
+      }
+
+      .btn-primary {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--jaune);
+        color: var(--texte);
+        padding: 0.85rem 1.5rem;
+        border-radius: 999px;
+        font-weight: 800;
+        box-shadow: 0 18px 40px rgba(255, 193, 7, 0.25);
+      }
+
+      .hero {
+        padding: 5rem 5% 3rem;
+        background: linear-gradient(135deg, rgba(255, 193, 7, 0.09), rgba(255,255,255,0.7));
+      }
+
+      .hero__inner {
+        max-width: 1100px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .eyebrow {
+        display: inline-block;
+        margin-bottom: 1rem;
+        background: rgba(255, 193, 7, 0.15);
+        color: #bd7c00;
+        padding: 0.7rem 1.1rem;
+        border-radius: 999px;
+        font-size: 0.75rem;
+        font-weight: 800;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.8rem, 6vw, 5rem);
+        line-height: 1.04;
+        margin-bottom: 1rem;
+      }
+
+      .hero p {
+        max-width: 760px;
+        margin: 0 auto;
+        color: var(--gris);
+        font-size: 1.08rem;
+      }
+
+      .menu-section {
+        padding: 4rem 5%;
+      }
+
+      .menu__inner {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .menu-category {
+        scroll-margin-top: 110px;
+        background: var(--blanc);
+        border: 1px solid rgba(0,0,0,0.04);
+        border-radius: 30px;
+        box-shadow: var(--ombre);
+        padding: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      .menu-category__top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .menu-category__top h2 {
+        font-size: clamp(2rem, 4vw, 3rem);
+      }
+
+      .menu-category__top span {
+        color: var(--jaune);
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+      }
+
+      .menu-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.25rem;
+      }
+
+      .dish {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 1rem;
+        background: #fffdf8;
+        border: 1px solid rgba(255, 193, 7, 0.18);
+        border-radius: 22px;
+        padding: 1.2rem 1.1rem;
+      }
+
+      .dish__info h3 {
+        font-size: 1.4rem;
+        margin-bottom: 0.35rem;
+      }
+
+      .dish__info p {
+        color: var(--gris);
+        font-size: 0.96rem;
+      }
+
+      .dish__price {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 92px;
+        background: var(--jaune-clair);
+        color: var(--texte);
+        border-radius: 999px;
+        font-weight: 800;
+        font-size: 1rem;
+        padding: 0.7rem 0.9rem;
+      }
+
+      .footer {
+        background: #1b1b1b;
+        color: rgba(255,255,255,0.88);
+        padding: 2.5rem 5% 2rem;
+      }
+
+      .footer__inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .footer__credit {
+        color: rgba(255,255,255,0.75);
+      }
+
+      .footer__credit a {
+        color: var(--jaune);
+        font-weight: 700;
+      }
+
+      @media (max-width: 768px) {
+        .top-bar {
+          flex-direction: column;
+          gap: 0.5rem;
+          padding: 0.8rem 4%;
+          text-align: center;
+        }
+
+        .nav {
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+        .nav-links {
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+        .hero {
+          padding-top: 3.5rem;
+        }
+
+        .menu-category {
+          padding: 1.5rem 1rem;
+        }
+
+        .menu-category__top {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .menu-list {
+          grid-template-columns: 1fr;
+        }
+
+        .dish {
+          grid-template-columns: 1fr;
+        }
+
+        .dish__price {
+          justify-self: start;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top-bar">
+      <div class="top-bar__info">
+        <span>📞 +33 1 23 45 67 89</span>
+        <span>✉️ contact@restaurant-hama.com</span>
+      </div>
+      <div class="top-bar__lang">
+        <a href="index.html">FR</a>
+        <span>|</span>
+        <a href="en.html">EN</a>
+      </div>
+    </div>
+
+    <header class="site-header">
+      <nav class="nav" aria-label="Navigation principale">
+        <div class="brand">Hama</div>
+        <ul class="nav-links">
+          <li><a href="#entrees">Entrées</a></li>
+          <li><a href="#plats">Plats</a></li>
+          <li><a href="#desserts">Desserts</a></li>
+          <li><a href="#vins">Vins &amp; Boissons</a></li>
+        </ul>
+        <a href="index.html#reservation" class="btn-primary">Réserver</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero__inner">
+          <span class="eyebrow">La carte</span>
+          <h1>Des saveurs pensées pour partager</h1>
+          <p>
+            Une sélection raffinée de produits de saison, préparée avec élégance pour chaque moment fort.
+          </p>
+        </div>
+      </section>
+
+      <section class="menu-section">
+        <div class="menu__inner">
+          <article class="menu-category" id="entrees">
+            <div class="menu-category__top">
+              <h2>Entrées</h2>
+              <span>Début de repas</span>
+            </div>
+            <div class="menu-list">
+              <div class="dish">
+                <div class="dish__info">
+                  <h3>Carpaccio de betterave</h3>
+                  <p>Betteraves rouges, agrume, feta et amandes effilées.</p>
+                </div>
+                <div class="dish__price">12€</div>
+              </div>
+
+              <div class="dish">
+                <div class="dish__info">
+                  <h3>Tartare de saumon</h3>
+                  <p>Citron vert, câpres, herbes fraîches et olive oil.</p>
+                </div>
+                <div class="dish__price">16€</div>
+              </div>
+
+              <div class="dish">
+                <div class="dish__info">
+                  <h3>Velouté de champignons</h3>
+                  <p>Crème légère, truffe et croûtons ail et herbes.</p>
+                </div>
+                <div class="dish__price">14€</div>
+              </div>
+
+              <div class="dish">
+                <div class="dish__info">
+                  <h3>Burata & tomates</h3>
+                  <p>Tomates rafraîchies, basilic, huile parfumée.</p>
+                </div>
+                <div class="dish__price">15€</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-category" id="plats">
+            <div class="menu-category__top">
+              <h2>Plats</h2>
+              <span>Signature</span>
+            </div>
+            <div class="menu-list">
+              <div class="dish">
+                <div class="dish__info">
+                  <h3>Poulet rôti au miel</h3>
+                  <p>Avec légumes confits, pomme de terre fondante et jus miel-citron.</p>
+                </div>
+                <div class="dish__price">24€</div>
+              </div>
+
+              <div class="dish">
+                <div class="dish__info">
+                  <h3>Risotto aux champignons</h3>
+                  <p>Parmesan, champignons sauvages, persil et noisette.</p>
+                </div>
+                <div class="dish__price">23€</div>
+              </div>
+
+              <div class="dish">
+                <div class="dish__info">
+                  <h3>Filet de saumon</h3>
+                  <p>Écrasée de légumes verts, beurre citronné et herbes.</p>
+                </div>
+                <div class="dish__price">27€</div>
+              </div>
+
+              <div class="dish">
+                <div class="dish__info">
+                  <h3>Tagliatelles au parmesan</h3>
+                  <p>Crème légère, parmesan affiné, poivre noir et citron zesté.</p>
+                </div>
+                <div class="dish__price">21€</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-category" id="desserts">
+            <div class="menu-category__top">
+              <h2>Desserts</h2>
+              <span>Fin douce</span>
+            </div>
+            <div class="menu-list">
+              <div class="dish">
+                <div class="dish__info">
+                  <h3>Tarte au citron</h3>
+                  <p>Meringue légère, crème acidulée et pâte sablée.</p>
+                </div>
+                <div class="dish__price">10€</div>
+              </div>
+
+              <div class="dish">
+                <div class="dish__info">
+                  <h3>Crème brûlée</h3>
+                  <p>Vanille bourbon, caramel croustillant et pointe de sel.</p>
+                </div>
+                <div class="dish__price">11€</div>
+              </div>
+
+              <div class="dish">
+                <div class="dish__info">
+                  <h3>Soufflé au chocolat</h3>
+                  <p>Chocolat noir, cœur fondant et crème anglaise.</p>
+                </div>
+                <div class="dish__price">12€</div>
+              </div>
+
+              <div class="dish">
+                <div class="dish__info">
+                  <h3>Panna cotta fruits rouges</h3>
+                  <p>Crème vanillée et coulis de fruits rouges frais.</p>
+                </div>
+                <div class="dish__price">11€</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-category" id="vins">
+            <div class="menu-category__top">
+              <h2>Vins &amp; Boissons</h2>
+              <span>À partager</span>
+            </div>
+            <div class="menu-list">
+              <div class="dish">
+                <div class="dish__info">
+                  <h3>Vin rouge Maison</h3>
+                  <p>Notes de fruits rouges, velouté et belle structure.</p>
+                </div>
+                <div class="dish__price">9€</div>
+              </div>
+
+              <div class="dish">
+                <div class="dish__info">
+                  <h3>Vin blanc Sauvignon</h3>
+                  <p>Frais, minéral et parfait avec les poissons.</p>
+                </div>
+                <div class="dish__price">10€</div>
+              </div>
+
+              <div class="dish">
+                <div class="dish__info">
+                  <h3>Cocktail Hama</h3>
+                  <p>Citron, basilic, tonic et une pointe d’agrumes.</p>
+                </div>
+                <div class="dish__price">14€</div>
+              </div>
+
+              <div class="dish">
+                <div class="dish__info">
+                  <h3>Eau minérale</h3>
+                  <p>Eau plate ou pétillante, service glacé.</p>
+                </div>
+                <div class="dish__price">4€</div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__inner">
+        <div>
+          <h3>Hama</h3>
+        </div>
+        <div class="footer__credit">
+          Créé par <a href="#">Neden Network</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
