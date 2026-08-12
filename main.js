@@ -92,7 +92,12 @@ if (dropdown && dropdownLink) {
             dropdown.classList.toggle('is-open');
             const isOpen = dropdown.classList.contains('is-open');
             dropdownLink.setAttribute('aria-expanded', String(isOpen));
+            return;
         }
+
+        const shouldOpen = !dropdown.classList.contains('is-open');
+        dropdown.classList.toggle('is-open', shouldOpen);
+        dropdownLink.setAttribute('aria-expanded', String(shouldOpen));
     });
 
     document.addEventListener('click', (event) => {
