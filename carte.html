@@ -152,7 +152,8 @@
       }
 
       .menu-section {
-        padding: 4rem 5%;
+        padding: 4rem 5% 5rem;
+        background: linear-gradient(180deg, #fffdfb 0%, #fff9ed 100%);
       }
 
       .menu__inner {
@@ -162,12 +163,13 @@
 
       .menu-category {
         scroll-margin-top: 110px;
-        background: var(--blanc);
+        background: rgba(255, 255, 255, 0.82);
         border: 1px solid rgba(0,0,0,0.04);
         border-radius: 30px;
         box-shadow: var(--ombre);
         padding: 2rem;
         margin-bottom: 2rem;
+        backdrop-filter: blur(6px);
       }
 
       .menu-category__top {
@@ -176,6 +178,8 @@
         align-items: center;
         gap: 1rem;
         margin-bottom: 1.5rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid rgba(0,0,0,0.06);
       }
 
       .menu-category__top h2 {
@@ -200,10 +204,16 @@
         display: grid;
         grid-template-columns: 1fr auto;
         gap: 1rem;
-        background: #fffdf8;
+        background: linear-gradient(180deg, #fffefb 0%, #fff9e9 100%);
         border: 1px solid rgba(255, 193, 7, 0.18);
         border-radius: 22px;
         padding: 1.2rem 1.1rem;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+      }
+
+      .dish:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 18px 35px rgba(255, 193, 7, 0.12);
       }
 
       .dish__info h3 {
@@ -227,29 +237,56 @@
         font-weight: 800;
         font-size: 1rem;
         padding: 0.7rem 0.9rem;
+        align-self: center;
       }
 
-      .footer {
+      .footer-section {
         background: #1b1b1b;
         color: rgba(255,255,255,0.88);
         padding: 2.5rem 5% 2rem;
       }
 
-      .footer__inner {
+      .footer-grid {
         max-width: 1200px;
         margin: 0 auto;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 1rem;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 2rem;
       }
 
-      .footer__credit {
+      .footer-brand h3 {
+        font-size: 2rem;
+        margin-bottom: 0.6rem;
+      }
+
+      .footer-links,
+      .footer-info,
+      .footer-brand {
+        color: rgba(255,255,255,0.8);
+      }
+
+      .footer-links p,
+      .footer-info p,
+      .footer-brand p {
+        margin-bottom: 0.5rem;
+      }
+
+      .footer-links a {
+        display: block;
+        margin-bottom: 0.4rem;
+        color: rgba(255,255,255,0.9);
+      }
+
+      .footer-credit {
+        max-width: 1200px;
+        margin: 2rem auto 0;
+        padding-top: 1.2rem;
+        border-top: 1px solid rgba(255,255,255,0.12);
+        text-align: center;
         color: rgba(255,255,255,0.75);
       }
 
-      .footer__credit a {
+      .footer-credit a {
         color: var(--jaune);
         font-weight: 700;
       }
@@ -296,6 +333,10 @@
         .dish__price {
           justify-self: start;
         }
+
+        .footer-grid {
+          grid-template-columns: 1fr;
+        }
       }
     </style>
   </head>
@@ -305,7 +346,12 @@
         <span>📞 +33 1 23 45 67 89</span>
         <span>✉️ contact@restaurant-hama.com</span>
       </div>
-    
+      <div class="top-bar__lang">
+        <a href="index.html">FR</a>
+        <span>|</span>
+        <a href="en.html">EN</a>
+      </div>
+    </div>
 
     <header class="site-header">
       <nav class="nav" aria-label="Navigation principale">
