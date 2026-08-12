@@ -9,9 +9,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
     <style>
       :root {
-        --jaune: #b8893d;
-        --jaune-clair: #f2e4bf;
-        --jaune-fonce: #7f5c28;
+        --jaune: #ffc107;
+        --jaune-clair: #fff8e1;
+        --jaune-fonce: #d9a506;
         --blanc: #ffffff;
         --beige: #f6f0e8;
         --noir: #161310;
@@ -115,7 +115,7 @@
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        background: linear-gradient(135deg, var(--jaune), #d2a95d);
+        background: var(--jaune);
         color: var(--noir);
         padding: 0.9rem 1.5rem;
         border-radius: 0;
@@ -145,9 +145,9 @@
       .eyebrow {
         display: inline-block;
         margin-bottom: 1rem;
-        background: rgba(184, 137, 61, 0.12);
-        border: 1px solid rgba(184, 137, 61, 0.5);
-        color: #ebd7a7;
+        background: rgba(255, 193, 7, 0.14);
+        border: 1px solid rgba(255, 193, 7, 0.5);
+        color: #f5d768;
         padding: 0.8rem 1.2rem;
         border-radius: 0;
         font-size: 0.75rem;
@@ -179,8 +179,8 @@
       }
 
       .hero__meta span {
-        background: rgba(184, 137, 61, 0.12);
-        border: 1px solid rgba(184, 137, 61, 0.55);
+        background: rgba(255, 193, 7, 0.12);
+        border: 1px solid rgba(255, 193, 7, 0.55);
         color: #f7f3ee;
         padding: 0.6rem 1rem;
         border-radius: 0;
@@ -202,7 +202,7 @@
       .menu-category {
         scroll-margin-top: 110px;
         background: rgba(25, 20, 17, 0.96);
-        border: 1px solid rgba(184, 137, 61, 0.28);
+        border: 1px solid rgba(255, 193, 7, 0.28);
         border-radius: 0;
         box-shadow: var(--ombre);
         padding: 2rem 2rem 2.2rem;
@@ -241,19 +241,28 @@
 
       .dish {
         display: grid;
-        grid-template-columns: 1fr auto;
+        grid-template-columns: 110px 1fr auto;
         gap: 1rem;
         background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
-        border: 1px solid rgba(184, 137, 61, 0.2);
+        border: 1px solid rgba(255, 193, 7, 0.2);
         border-radius: 0;
-        padding: 1.2rem 1.1rem;
+        padding: 0.8rem 0.9rem;
         transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
       }
 
       .dish:hover {
         transform: translateY(-4px);
         box-shadow: 0 16px 32px rgba(0,0,0,0.16);
-        border-color: rgba(212, 168, 77, 0.45);
+        border-color: rgba(255, 193, 7, 0.45);
+      }
+
+      .dish__image {
+        width: 100%;
+        min-height: 100px;
+        border: 1px solid rgba(255,255,255,0.08);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
       }
 
       .dish__info h3 {
@@ -515,6 +524,7 @@
             </div>
             <div class="menu-list">
               <div class="dish">
+                <div class="dish__image" style="background-image: url('photo/carpaccio_bettrave.jpg');"></div>
                 <div class="dish__info">
                   <h3>Carpaccio de betterave</h3>
                   <p>Betteraves rouges, agrume, feta et amandes effilées.</p>
@@ -523,6 +533,7 @@
               </div>
 
               <div class="dish">
+                <div class="dish__image" style="background-image: url('photo/Tartare-de-saumon.jpg');"></div>
                 <div class="dish__info">
                   <h3>Tartare de saumon</h3>
                   <p>Citron vert, câpres, herbes fraîches et olive oil.</p>
@@ -531,6 +542,7 @@
               </div>
 
               <div class="dish">
+                <div class="dish__image" style="background-image: url('photo/veloute_champignon.jpg');"></div>
                 <div class="dish__info">
                   <h3>Velouté de champignons</h3>
                   <p>Crème légère, truffe et croûtons ail et herbes.</p>
@@ -539,8 +551,9 @@
               </div>
 
               <div class="dish">
+                <div class="dish__image" style="background-image: url('photo/burrata_et_tomates.jpeg');"></div>
                 <div class="dish__info">
-                  <h3>Burata & tomates</h3>
+                  <h3>Burata &amp; tomates</h3>
                   <p>Tomates rafraîchies, basilic, huile parfumée.</p>
                 </div>
                 <div class="dish__price">15€</div>
@@ -555,6 +568,7 @@
             </div>
             <div class="menu-list">
               <div class="dish">
+                <div class="dish__image" style="background-image: url('photo/poulet_roti_au _miel.jpg');"></div>
                 <div class="dish__info">
                   <h3>Poulet rôti au miel</h3>
                   <p>Avec légumes confits, pomme de terre fondante et jus miel-citron.</p>
@@ -563,6 +577,7 @@
               </div>
 
               <div class="dish">
+                <div class="dish__image" style="background-image: url('photo/risotto.jpeg');"></div>
                 <div class="dish__info">
                   <h3>Risotto aux champignons</h3>
                   <p>Parmesan, champignons sauvages, persil et noisette.</p>
@@ -571,6 +586,7 @@
               </div>
 
               <div class="dish">
+                <div class="dish__image" style="background-image: url('photo/filet_de_saumon.jpg');"></div>
                 <div class="dish__info">
                   <h3>Filet de saumon</h3>
                   <p>Écrasée de légumes verts, beurre citronné et herbes.</p>
@@ -579,6 +595,7 @@
               </div>
 
               <div class="dish">
+                <div class="dish__image" style="background-image: url('photo/tagliatelles.jpg');"></div>
                 <div class="dish__info">
                   <h3>Tagliatelles au parmesan</h3>
                   <p>Crème légère, parmesan affiné, poivre noir et citron zesté.</p>
@@ -595,6 +612,7 @@
             </div>
             <div class="menu-list">
               <div class="dish">
+                <div class="dish__image" style="background-image: url('photo/tarte_au_citron.jpg');"></div>
                 <div class="dish__info">
                   <h3>Tarte au citron</h3>
                   <p>Meringue légère, crème acidulée et pâte sablée.</p>
@@ -603,6 +621,7 @@
               </div>
 
               <div class="dish">
+                <div class="dish__image" style="background-image: url('photo/creme_brulee.jpg');"></div>
                 <div class="dish__info">
                   <h3>Crème brûlée</h3>
                   <p>Vanille bourbon, caramel croustillant et pointe de sel.</p>
@@ -611,6 +630,7 @@
               </div>
 
               <div class="dish">
+                <div class="dish__image" style="background-image: url('photo/souffle.jpg');"></div>
                 <div class="dish__info">
                   <h3>Soufflé au chocolat</h3>
                   <p>Chocolat noir, cœur fondant et crème anglaise.</p>
@@ -619,6 +639,7 @@
               </div>
 
               <div class="dish">
+                <div class="dish__image" style="background-image: url('photo/panna_cotta.jpg');"></div>
                 <div class="dish__info">
                   <h3>Panna cotta fruits rouges</h3>
                   <p>Crème vanillée et coulis de fruits rouges frais.</p>
@@ -635,6 +656,7 @@
             </div>
             <div class="menu-list">
               <div class="dish">
+                <div class="dish__image" style="background-image: url('photo/vin_maison.jpeg');"></div>
                 <div class="dish__info">
                   <h3>Vin rouge Maison</h3>
                   <p>Notes de fruits rouges, velouté et belle structure.</p>
@@ -643,6 +665,7 @@
               </div>
 
               <div class="dish">
+                <div class="dish__image" style="background-image: url('photo/vin_blanc.jpg');"></div>
                 <div class="dish__info">
                   <h3>Vin blanc Sauvignon</h3>
                   <p>Frais, minéral et parfait avec les poissons.</p>
@@ -651,6 +674,7 @@
               </div>
 
               <div class="dish">
+                <div class="dish__image" style="background-image: url('photo/cocktail_hama.jpg');"></div>
                 <div class="dish__info">
                   <h3>Cocktail Hama</h3>
                   <p>Citron, basilic, tonic et une pointe d’agrumes.</p>
@@ -659,6 +683,7 @@
               </div>
 
               <div class="dish">
+                <div class="dish__image" style="background-image: url('photo/eau.jpg');"></div>
                 <div class="dish__info">
                   <h3>Eau minérale</h3>
                   <p>Eau plate ou pétillante, service glacé.</p>
