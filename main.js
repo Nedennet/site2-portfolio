@@ -64,6 +64,24 @@ function nextSlide() {
     }, 50);
 }
 
+const dropdown = document.querySelector('.dropdown');
+const dropdownLink = dropdown?.querySelector('a');
+
+if (dropdown && dropdownLink) {
+    dropdownLink.addEventListener('click', (event) => {
+        if (window.innerWidth <= 768) {
+            event.preventDefault();
+            dropdown.classList.toggle('is-open');
+        }
+    });
+
+    document.addEventListener('click', (event) => {
+        if (!dropdown.contains(event.target)) {
+            dropdown.classList.remove('is-open');
+        }
+    });
+}
+
 const reservationForm = document.getElementById('reservationForm');
 const reservationMessage = document.getElementById('reservationMessage');
 
