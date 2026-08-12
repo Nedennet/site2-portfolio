@@ -183,15 +183,16 @@ button, a {
 .dropdown-content li a {
     display: block;
     padding: 0.9rem 1.3rem;
-    color: var(--texte-sombre);
+    color: var(--texte-sombre) !important;
     text-decoration: none;
     text-align: center;
     font-weight: 700;
+    background: transparent;
 }
 
 .dropdown-content li a:hover {
     background: var(--jaune);
-    color: var(--blanc);
+    color: var(--blanc) !important;
     border-radius: 15px;
 }
 
