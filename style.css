@@ -81,6 +81,13 @@ button, a {
     padding: 0.95rem 5%;
 }
 
+.main-nav.nav-hidden .btn-reserve {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-12px);
+    pointer-events: none;
+}
+
 .main-nav:not(.scrolled) .logo,
 .main-nav:not(.scrolled) .nav-links li a,
 .main-nav:not(.scrolled) .dropdown > a {
@@ -766,6 +773,20 @@ button, a {
     .main-nav .btn-reserve {
         grid-column: 1 / -1;
         width: 100%;
+        transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+    }
+
+    .main-nav.nav-hidden .btn-reserve {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-12px);
+        pointer-events: none;
+    }
+
+    .main-nav.open .btn-reserve {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
     }
 
     .hero {

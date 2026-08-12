@@ -3,12 +3,14 @@ const mainNav = document.getElementById('mainNav');
 const topBar = document.getElementById('topBar');
 
 window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        mainNav.classList.add('scrolled');
-        topBar.classList.add('scrolled');
+    const isScrolled = window.scrollY > 50;
+    mainNav?.classList.toggle('scrolled', isScrolled);
+    topBar?.classList.toggle('scrolled', isScrolled);
+
+    if (window.innerWidth <= 768 && isScrolled) {
+        mainNav?.classList.add('nav-hidden');
     } else {
-        mainNav.classList.remove('scrolled');
-        topBar.classList.remove('scrolled');
+        mainNav?.classList.remove('nav-hidden');
     }
 });
 
@@ -65,7 +67,6 @@ function nextSlide() {
 }
 
 const navToggle = document.querySelector('.nav-toggle');
-const mainNav = document.getElementById('mainNav');
 
 if (navToggle && mainNav) {
     navToggle.addEventListener('click', () => {
@@ -89,12 +90,15 @@ if (dropdown && dropdownLink) {
         if (window.innerWidth <= 768) {
             event.preventDefault();
             dropdown.classList.toggle('is-open');
+            const isOpen = dropdown.classList.contains('is-open');
+            dropdownLink.setAttribute('aria-expanded', String(isOpen));
         }
     });
 
     document.addEventListener('click', (event) => {
         if (!dropdown.contains(event.target)) {
             dropdown.classList.remove('is-open');
+            dropdownLink.setAttribute('aria-expanded', 'false');
         }
     });
 }
