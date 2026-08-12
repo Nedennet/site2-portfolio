@@ -9,16 +9,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
     <style>
       :root {
-        --jaune: #d4a84d;
-        --jaune-clair: #f8eed2;
-        --jaune-fonce: #9d7427;
+        --jaune: #b8893d;
+        --jaune-clair: #f2e4bf;
+        --jaune-fonce: #7f5c28;
         --blanc: #ffffff;
         --beige: #f6f0e8;
-        --noir: #171410;
-        --noir-2: #201b17;
+        --noir: #161310;
+        --noir-2: #1f1b16;
         --texte: #1d1b18;
         --gris: #625c57;
-        --ombre: 0 30px 90px rgba(23, 20, 16, 0.18);
+        --ombre: 0 18px 40px rgba(23, 20, 16, 0.15);
       }
 
       * {
@@ -115,13 +115,13 @@
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        background: linear-gradient(135deg, var(--jaune), #f0c562);
+        background: linear-gradient(135deg, var(--jaune), #d2a95d);
         color: var(--noir);
         padding: 0.9rem 1.5rem;
-        border-radius: 999px;
+        border-radius: 0;
         font-weight: 800;
-        box-shadow: 0 18px 40px rgba(212, 168, 77, 0.28);
-        border: 1px solid rgba(0, 0, 0, 0.04);
+        box-shadow: none;
+        border: 1px solid rgba(0, 0, 0, 0.08);
       }
 
       .hero {
@@ -145,11 +145,11 @@
       .eyebrow {
         display: inline-block;
         margin-bottom: 1rem;
-        background: rgba(212, 168, 77, 0.14);
-        border: 1px solid rgba(212, 168, 77, 0.45);
-        color: #f7d487;
+        background: rgba(184, 137, 61, 0.12);
+        border: 1px solid rgba(184, 137, 61, 0.5);
+        color: #ebd7a7;
         padding: 0.8rem 1.2rem;
-        border-radius: 999px;
+        border-radius: 0;
         font-size: 0.75rem;
         font-weight: 800;
         letter-spacing: 0.18em;
@@ -179,11 +179,11 @@
       }
 
       .hero__meta span {
-        background: rgba(255,255,255,0.08);
-        border: 1px solid rgba(255,255,255,0.15);
+        background: rgba(184, 137, 61, 0.12);
+        border: 1px solid rgba(184, 137, 61, 0.55);
         color: #f7f3ee;
         padding: 0.6rem 1rem;
-        border-radius: 999px;
+        border-radius: 0;
         font-size: 0.8rem;
         letter-spacing: 0.06em;
         text-transform: uppercase;
@@ -201,9 +201,9 @@
 
       .menu-category {
         scroll-margin-top: 110px;
-        background: rgba(25, 20, 17, 0.95);
-        border: 1px solid rgba(212, 168, 77, 0.2);
-        border-radius: 32px;
+        background: rgba(25, 20, 17, 0.96);
+        border: 1px solid rgba(184, 137, 61, 0.28);
+        border-radius: 0;
         box-shadow: var(--ombre);
         padding: 2rem 2rem 2.2rem;
         margin-bottom: 2rem;
@@ -244,8 +244,8 @@
         grid-template-columns: 1fr auto;
         gap: 1rem;
         background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
-        border: 1px solid rgba(212, 168, 77, 0.15);
-        border-radius: 24px;
+        border: 1px solid rgba(184, 137, 61, 0.2);
+        border-radius: 0;
         padding: 1.2rem 1.1rem;
         transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
       }
@@ -274,12 +274,12 @@
         min-width: 92px;
         background: linear-gradient(135deg, var(--jaune-clair), var(--jaune));
         color: var(--texte);
-        border-radius: 999px;
+        border-radius: 0;
         font-weight: 800;
         font-size: 1rem;
         padding: 0.75rem 1rem;
         align-self: center;
-        box-shadow: 0 8px 20px rgba(212, 168, 77, 0.2);
+        box-shadow: none;
       }
 
       .footer-section {
